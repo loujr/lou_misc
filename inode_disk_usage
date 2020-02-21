@@ -1,0 +1,3 @@
+echo -e "\033[0;35mDetailed Inode and Space usage for: $(pwd)\033[0m" ; echo -e "\033[0;34mInodes\033[0m - \033[0;31mDiskUsage -Folder\033[0m"; for d in `find -maxdepth 1 -type d |cut -d\/ -f2 |grep -xv . |sort`; do s=$(du -h --max-depth=0 $d); c=$(find $d |wc -l); printf "\033[0;34m$c\t\033[0m- \033[0;31m$s\t\n\033[0m" ; done ; printf "\033[0;34mTotal Inodes:\033[0m \033[1;34m\t\t$(find $(pwd) | wc -l)\n\033[0m"; printf "\033[0;31mTotal Disk Usage:\033[0m \033[1;31m\t$(du -sh .)\n\033[0m"
+
+--Detailed grep of Inode and Disk Space
