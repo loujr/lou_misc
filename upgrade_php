@@ -1,0 +1,4 @@
+find ~/ -type f -name .htaccess -exec sed -i -r '/(AddHandler|suPHP_ConfigPath)/s|^|#|g' {} \; ; find ~/ -maxdepth 3 -type f -name 'php.ini' -exec mv -v {} {}.$(date +%s).bak \; ; echo -e "\nAddHandler  application/x-httpd-ea-php72 .php .php7 .phtml" >> ~/.htaccess
+
+
+--- sed command for upgraded php settings using add handler in htaccess files
