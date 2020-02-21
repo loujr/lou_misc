@@ -1,0 +1,4 @@
+#SSL insecure content fixer code
+<ifModule mod_headers.c>
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+</IfModule>
