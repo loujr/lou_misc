@@ -1,0 +1,1 @@
+sed -i 1i\ "#SSL REDIRECT START\nRewriteEngine On \nRewriteCond %{HTTPS} off\nRewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]\n#SSL REDIRECT END\n\n#MIXED CONTENT START\n<ifModule mod_headers.c>\nHeader always set Content-Security-Policy \"upgrade-insecure-requests;\"\n</IfModule>\n#MIX CONTENT END\n\n" .htaccess
